@@ -1,0 +1,20 @@
+name: Bug report
+description: Report a reproducible CareerForge defect
+title: "[Bug]: "
+labels: [bug, triage]
+body:
+  - type: textarea
+    id: impact
+    attributes: { label: Impact, description: What user or business outcome is blocked? }
+    validations: { required: true }
+  - type: textarea
+    id: reproduce
+    attributes: { label: Reproduction, description: Exact steps, expected result, and actual result. }
+    validations: { required: true }
+  - type: dropdown
+    id: severity
+    attributes: { label: Severity, options: [P0, P1, P2, P3] }
+    validations: { required: true }
+  - type: textarea
+    id: evidence
+    attributes: { label: Evidence, description: Logs, request ID, screenshots, or environment details. }

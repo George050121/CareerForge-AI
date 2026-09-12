@@ -29,8 +29,10 @@
 - `GET /api/health` — process readiness and AI configuration flag
 - `GET /api/applications` — ordered pipeline records
 - `POST /api/applications` — create a pipeline record
+- `PATCH /api/applications/:id` — transition application status
+- `DELETE /api/applications/:id` — remove a pipeline record
 - `POST /api/analyze` — validated resume and job analysis
 
 ## Security posture
 
-Provider secrets are read only by the server. Request bodies are capped at 1 MB and domain inputs at 30,000 characters. `.env` and user-created records are excluded from source control. Before public hosting, add authentication, per-user authorization, rate limiting, encrypted managed storage, CSRF strategy, secure headers, and retention controls.
+Provider secrets are read only by the server. Request bodies are capped at 1 MB and domain inputs at 30,000 characters. `.env` and user-created records are excluded from source control. Baseline security headers, request correlation, structured errors, and single-process rate limiting are enabled. Before public hosting, add authentication, per-user authorization, distributed rate limiting, encrypted managed storage, CSRF strategy, and retention controls.

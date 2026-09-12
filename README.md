@@ -2,6 +2,8 @@
 
 CareerForge is a portfolio-grade job-search command center. It compares a resume with a job description, produces an evidence-based fit strategy, and keeps an application pipeline in one focused workspace.
 
+The project follows a documented enterprise delivery model. Start with the living [development process](docs/DEVELOPMENT_PROCESS.md), then review accepted changes under [`docs/rfcs`](docs/rfcs).
+
 ![CareerForge status](https://img.shields.io/badge/status-MVP-20231e) ![TypeScript](https://img.shields.io/badge/TypeScript-strict-3178c6) ![Tests](https://img.shields.io/badge/tests-Vitest-dfff57)
 
 ## What it does
@@ -11,6 +13,8 @@ CareerForge is a portfolio-grade job-search command center. It compares a resume
 - Creates a targeted resume action plan and cover-letter draft
 - Generates role-specific interview questions with answer strategies
 - Tracks applications, statuses, dates, locations, and match quality
+- Saves completed analyses directly into the pipeline
+- Supports validated status transitions and confirmed record deletion
 - Runs without credentials using a deterministic demo analyzer
 - Uses OpenAI Structured Outputs when `OPENAI_API_KEY` is configured
 
@@ -53,7 +57,7 @@ Express API ── Zod validation
    └── demo analyzer        (Structured Outputs)
 ```
 
-The API key remains server-side. Inputs are length-bounded and validated. AI output is checked twice: by JSON Schema at generation time and Zod at the application boundary. See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for decisions and [docs/PLAN.md](docs/PLAN.md) for the roadmap.
+The API key remains server-side. Inputs are length-bounded and validated. AI output is checked twice: by JSON Schema at generation time and Zod at the application boundary. Every API response carries a request ID; write endpoints are schema-validated and local persistence uses atomic replacement. See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for decisions and [docs/PLAN.md](docs/PLAN.md) for the roadmap.
 
 ## Data and privacy
 

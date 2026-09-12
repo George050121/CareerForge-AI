@@ -2,6 +2,31 @@
 
 This append-only log records meaningful product and engineering updates. Each entry includes the decision, validation, and next risk so future work can resume without reconstructing context.
 
+## 2026-09-11 — v1.1.0 enterprise delivery baseline
+
+### Shipped
+
+- Established a living enterprise development process, RFC workflow, ownership rules, review template, bug intake, release record, and CI pipeline.
+- Connected Match Lab output to the application pipeline with one-click save.
+- Added validated lifecycle updates and confirmed deletion to the tracker.
+- Introduced request IDs, structured API errors/logs, baseline security headers, payload bounds, and per-process rate limiting.
+- Replaced direct JSON writes with serialized atomic replacement and a dependency-injectable repository.
+- Expanded contract and repository tests, including invalid input and lifecycle behavior.
+
+### Validation
+
+- ESLint: passed with zero warnings and errors.
+- Unit/contract tests: 8/8 passed across two suites.
+- Strict TypeScript and Vite production build: passed.
+- Dependency audit: zero known vulnerabilities.
+- Isolated production smoke test: health/security headers, structured validation failure, create, status update, and delete all passed.
+- Git diff hygiene check: passed.
+
+### Known constraints
+
+- The local JSON repository and in-memory limiter are single-process components; Postgres and distributed rate limiting remain required before horizontal production deployment.
+- Bootstrap exception: RFC-001 establishes the PR gate itself and was self-reviewed by the repository owner workflow; subsequent feature changes must use the new pull-request template and CI gate.
+
 ## 2026-09-07 — v0.1.0 foundation and MVP
 
 ### Shipped

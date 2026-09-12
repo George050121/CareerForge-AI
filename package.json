@@ -1,13 +1,14 @@
 {
   "name": "careerforge-ai",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "private": true,
   "type": "module",
   "scripts": {
     "dev": "concurrently \"tsx watch server/index.ts\" \"vite\"",
     "build": "tsc -b && vite build",
     "start": "tsx server/index.ts",
-    "test": "vitest run",
+    "test": "vitest run --coverage.enabled=false",
+    "quality": "npm run lint && npm test && npm run build",
     "lint": "eslint . --max-warnings=0"
   },
   "dependencies": {
