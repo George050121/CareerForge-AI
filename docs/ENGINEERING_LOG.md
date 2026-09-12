@@ -2,6 +2,30 @@
 
 This append-only log records meaningful product and engineering updates. Each entry includes the decision, validation, and next risk so future work can resume without reconstructing context.
 
+## 2026-09-12 — v1.2.0 application funnel insights
+
+### Planned scope
+
+- Accepted RFC-002 with explicit goals, non-goals, UX rationale, risks, acceptance criteria, and rollback plan.
+- Added an explainable overview funnel and interview-conversion metric.
+- Added tracker search, status filtering, result counts, empty-state handling, and seven-day follow-up signals.
+- Isolated filtering, staleness, and funnel calculations in a deterministic domain module.
+- Added domain tests and real HTTP integration coverage for request correlation, security headers, validation errors, and CRUD lifecycle.
+
+### Validation
+
+- ESLint: passed with zero warnings and errors.
+- Automated tests: 15/15 passed across four suites, including pure domain and real HTTP integration coverage.
+- Strict TypeScript and Vite production build: passed.
+- Dependency audit: zero known vulnerabilities.
+- Isolated production smoke test: SPA, static assets, and application API returned successfully.
+- Visual/interaction check: funnel rendered with correct seed counts and search reduced 3 records to the expected single match.
+- Git diff hygiene check: passed.
+
+### Known constraints
+
+- Follow-up age uses the application `date` as latest known activity. A future immutable status-event model is required for accurate stage-duration analytics.
+
 ## 2026-09-11 — v1.1.0 enterprise delivery baseline
 
 ### Shipped

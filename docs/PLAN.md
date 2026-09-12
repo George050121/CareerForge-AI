@@ -56,7 +56,7 @@ The UI is a Vite-built React SPA. An Express boundary owns validation, persisten
 
 ### Milestone 5 — measurable outcomes
 
-- Funnel analytics: saved → applied → screen → onsite → offer
+- Funnel analytics: saved → applied → interview → offer (v1 delivered; historical event model remains)
 - Resume version experiments and response-rate comparisons
 - Prompt/evaluation dataset with recruiter-scored outputs
 - Accessibility audit, performance budgets, end-to-end tests
