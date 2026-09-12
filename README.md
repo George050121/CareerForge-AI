@@ -15,6 +15,9 @@ The project follows a documented enterprise delivery model. Start with the livin
 - Tracks applications, statuses, dates, locations, and match quality
 - Saves completed analyses directly into the pipeline
 - Supports validated status transitions and confirmed record deletion
+- Shows an explainable application funnel and interview conversion rate
+- Finds applications by company, role, or location and filters by lifecycle stage
+- Flags active applications that may need a seven-day follow-up
 - Runs without credentials using a deterministic demo analyzer
 - Uses OpenAI Structured Outputs when `OPENAI_API_KEY` is configured
 

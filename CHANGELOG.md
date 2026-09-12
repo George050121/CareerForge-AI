@@ -4,6 +4,17 @@ All notable changes follow Keep a Changelog and Semantic Versioning.
 
 ## [Unreleased]
 
+## [1.2.0] - 2026-09-12
+
+### Added
+
+- Explainable application funnel with saved, submitted, interview, and offer stages.
+- Interview conversion metric with safe handling for empty denominators.
+- Case-insensitive tracker search across company, role, and location.
+- Lifecycle status filtering, result counts, and an accessible empty state.
+- Seven-day follow-up signals for active applications.
+- Pure application-insights domain module and real HTTP API integration tests.
+
 ## [1.1.0] - 2026-09-11
 
 ### Added

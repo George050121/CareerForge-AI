@@ -24,6 +24,12 @@
 
 **Why:** It avoids infrastructure during local evaluation. The narrow module is intentionally replaceable by a Postgres repository in the next milestone.
 
+## ADR-005: pure client-side insights domain
+
+**Decision:** Filtering, follow-up age, and small-sample funnel calculations live in `src/domain/applications.ts` as pure functions.
+
+**Why:** These insights derive entirely from the already-loaded pipeline, so an additional API would add latency and coupling without improving authority. Injected time makes follow-up rules deterministic in tests. A future historical event model can replace this calculation without changing presentation components.
+
 ## API contracts
 
 - `GET /api/health` — process readiness and AI configuration flag
